@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: red; /* fond rouge */
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: white; /* texte en blanc */
+      font-size: 2em;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .heart {
+      position: absolute;
+      top: -50px;
+      font-size: 2em;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    /* Style pour centrer la vidéo */
+    .video-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Merci !! je savais que tu m'aime</h1>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤️"; // emoji cœur
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s"; // vitesse variable
+      document.body.appendChild(heart);
+
+      // Supprimer le cœur après animation
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    // Générer des cœurs régulièrement
+    setInterval(createHeart, 500);
+  </script>
+
+  <!-- Bloc vidéo centré -->
+  <div class="video-container">
+         <video width="640" height="360" autoplay muted controls>
+      <source src="VIDEO/vv.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+  </div>
+</body>
+</html>
