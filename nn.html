@@ -36,16 +36,14 @@
         opacity: 0;
       }
     }
-
-    /* Style pour centrer la vidéo */
-    .video-container {
-      margin-top: 20px;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
-  <h1>Merci !! je savais que tu m'aime</h1>
+  <h1>❤️Merci !! je savais que tu m'aime❤️</h1>
+  
+<video width="600" controls autoplay muted>
+  <source src="VIDEO/vv.mp4" type="video/mp4">
+
 
   <script>
     function createHeart() {
@@ -65,13 +63,5 @@
     // Générer des cœurs régulièrement
     setInterval(createHeart, 500);
   </script>
-
-  <!-- Bloc vidéo centré -->
-  <div class="video-container">
-         <video width="640" height="360" autoplay muted controls>
-      <source src="VIDEO/vv.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la lecture de vidéos.
-    </video>
-  </div>
 </body>
 </html>

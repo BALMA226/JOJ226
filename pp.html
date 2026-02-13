@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      color: green; /* texte en vert */
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    .btn {
+      padding: 10px 20px;
+      margin: 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color:black; /* boutons en rouge */
+      background: transparent;
+      position: relative;
+    }
+    #oui{
+      
+  display: inline-block;       /* permet de gérer largeur/hauteur */
+  border: 2px solid green;     /* cercle vert */
+  border-radius: 50%;          /* arrondi complet = cercle */
+  padding: 10px;               /* espace autour du mot */
+  text-align: center;          /* centre le texte dans le cercle */
+  background-color: red; 
+  
+    }
+    #non {
+      display: inline-block;       /* permet de gérer largeur/hauteur */
+  border: 2px solid green;     /* cercle vert */
+  border-radius: 50%;          /* arrondi complet = cercle */
+  padding: 10px;               /* espace autour du mot */
+  text-align: center;          /* centre le texte dans le cercle */
+  background-color: green;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="question">Veux-tu être ma Valentine ?</h1>
+  <div>
+    <button id="oui" class="btn">Oui❤️</button>
+    <button id="non" class="btn">Non</button>
+  </div>
+
+  <script>
+    const ouiBtn = document.getElementById("oui");
+    const nonBtn = document.getElementById("non");
+    const question = document.getElementById("question");
+
+    // Action si on clique sur "Oui"
+    ouiBtn.addEventListener("click", () => {
+      question.textContent = "Merci !! je t'aime aussi";
+      // Redirection vers un autre lien (remplace par ton URL)
+      window.location.href = "nn.html";
+
+    
+    });
+
+    // Action si on clique sur "Non"
+    nonBtn.addEventListener("click", () => {
+      const x = Math.random() * (window.innerWidth - nonBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - nonBtn.offsetHeight);
+      nonBtn.style.left = `${x}px`;
+      nonBtn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
